@@ -41,3 +41,14 @@ We tested our model using precision, recall, and a confusion matrix to see how w
 
 To understand why the model makes certain predictions, we used SHAP (a tool for explainable AI). It showed us which features had the most influence, making our model more transparent and trustworthy.
 
+## 4th Commit
+Feature Importance for Model Insights
+To understand which factors influence fraud detection, we used the feature importance scores from our Random Forest model. These scores highlight which features the model relies on most when classifying a transaction as fraudulent or not.
+
+By ranking the top features, we gained valuable insights into what patterns or behaviors are commonly linked to fraud — making the model more interpretable and trustworthy.
+
+Final Model Selection
+After training and evaluating multiple configurations, the Random Forest Classifier with SMOTE oversampling and a custom probability threshold was selected as the final model. It delivered a strong balance of precision and recall, and handled class imbalance effectively — making it a reliable choice for fraud detection.
+
+
+
