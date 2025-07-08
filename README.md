@@ -51,4 +51,5 @@ Final Model Selection
 After training and evaluating multiple configurations, the Random Forest Classifier with SMOTE oversampling and a custom probability threshold was selected as the final model. It delivered a strong balance of precision and recall, and handled class imbalance effectively — making it a reliable choice for fraud detection.
 
 
-
+## 5th commit 
+Initialising Streamlit Designing the app.py file ..
