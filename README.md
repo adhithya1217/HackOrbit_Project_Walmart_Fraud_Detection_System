@@ -21,7 +21,7 @@ In this project, we analyze transactional data to:
 - **Random Forest Model**: Trained to classify transactions as fraudulent or not
 - **Model Evaluation**: Classification report & confusion matrix
 
-##2nd Commit
+## 2nd Commit
 1. Class Imbalance Analysis
 We began by examining the class distribution of the IsFraud column.
 2. Balancing Data with SMOTE
@@ -34,3 +34,10 @@ The resampled data was split into training and test sets:
 We trained a Random Forest Classifier, known for its robustness and high accuracy:
 6. Saving the Trained Model
 The trained model was saved using joblib for future use or deployment.
+
+## 3rd Commit
+Model Evaluation & Explainability
+We tested our model using precision, recall, and a confusion matrix to see how well it catches fraud. Since fraud cases are rare, we adjusted the prediction threshold to make the model more sensitive — helping it catch more fraudulent transactions, even if it means a few extra false alarms.
+
+To understand why the model makes certain predictions, we used SHAP (a tool for explainable AI). It showed us which features had the most influence, making our model more transparent and trustworthy.
+
