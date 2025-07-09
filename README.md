@@ -6,7 +6,6 @@ A machine learning-powered fraud detection system built to identify potentially 
 ---
 
 ##  Project Overview
-## 1st Commit
 In this project, we analyze transactional data to:
 - Detect fraudulent activities
 - Handle data imbalance using SMOTE
@@ -14,52 +13,65 @@ In this project, we analyze transactional data to:
 - Evaluate the model with precision, recall, and F1-score
 ---
 
-##  Features
+Project Deployed Succesfully on Streamlit.app
 
-- **Data Preprocessing**: Cleaned and structured synthetic transactional data
-- **SMOTE Oversampling**: Addressed class imbalance in fraud detection
-- **Random Forest Model**: Trained to classify transactions as fraudulent or not
-- **Model Evaluation**: Classification report & confusion matrix
+## Features implemented in this project are :
+✅ 1. Real-Time Fraud Prediction
+Users can input transaction data manually.
 
-## 2nd Commit
-1. Class Imbalance Analysis
-We began by examining the class distribution of the IsFraud column.
-2. Balancing Data with SMOTE
-To address the imbalance, we used SMOTE (Synthetic Minority Oversampling Technique), which generates synthetic samples of the minority class (IsFraud = 1):
- 3. Feature Encoding
-We handled categorical variables using One-Hot Encoding, converting text labels into numerical columns using pd.get_dummies():
-4. Train-Test Split
-The resampled data was split into training and test sets:
-5. Random Forest Classifier
-We trained a Random Forest Classifier, known for its robustness and high accuracy:
-6. Saving the Trained Model
-The trained model was saved using joblib for future use or deployment.
+The model predicts whether the transaction is fraudulent or legitimate.
 
-## 3rd Commit
-Model Evaluation & Explainability
-We tested our model using precision, recall, and a confusion matrix to see how well it catches fraud. Since fraud cases are rare, we adjusted the prediction threshold to make the model more sensitive — helping it catch more fraudulent transactions, even if it means a few extra false alarms.
+Uses a trained Random Forest model with a customizable threshold slider.
 
-To understand why the model makes certain predictions, we used SHAP (a tool for explainable AI). It showed us which features had the most influence, making our model more transparent and trustworthy.
+✅ 2. Data Upload & Dynamic Support
+Users can upload their own CSV files with similar schema.
 
-## 4th Commit
-Feature Importance for Model Insights
-To understand which factors influence fraud detection, we used the feature importance scores from our Random Forest model. These scores highlight which features the model relies on most when classifying a transaction as fraudulent or not.
+App adapts dynamically to uploaded data for predictions and visualization.
 
-By ranking the top features, we gained valuable insights into what patterns or behaviors are commonly linked to fraud — making the model more interpretable and trustworthy.
+✅ 3. Interactive Visualizations (Plotly)
+📊 Fraud Count by Hour – Bar chart to show hourly fraud trends.
 
-Final Model Selection
-After training and evaluating multiple configurations, the Random Forest Classifier with SMOTE oversampling and a custom probability threshold was selected as the final model. It delivered a strong balance of precision and recall, and handled class imbalance effectively — making it a reliable choice for fraud detection.
+🧭 Fraud by Customer Location – Heatmap style bar chart by region.
 
+🛒 Fraud by Product Category – Pie chart.
 
-## 5th commit 
-Initialising Streamlit Designing the app.py file ..
+💰 Transaction Amount Histogram – Compare fraud vs non-fraud.
 
-## DAY 2
-## 6th commit
-Completed the code and cheking for updates..
-and i have added  Real-Time Fraud Probability Gauge and also added visual Interactions ..
+✅ 4. Feature Importance (Model Insights)
+Displays top 15 important features from the model.
 
-## 7th commit
-Checked and Updated evrything whats necessary and new features implemnetd like interactions with the report ..
-ready for deployment ..
+Helps interpret model behavior using Plotly horizontal bar charts.
+
+✅ 5. Live Probability Gauge
+A real-time meter gauge shows the fraud probability (%) using Plotly.
+
+Intuitive display for understanding how risky a transaction is.
+
+✅ 6. Light/Dark Mode Toggle
+UI supports both Light and Dark themes.
+
+Automatically defaults to Dark mode with toggle in sidebar.
+
+✅ 7. Clean & Modern Streamlit UI
+Uses custom styling with CSS inside st.markdown.
+
+Responsive layout with 3-column inputs, buttons, and hover animations.
+
+## 🔍 Why This Project Stands Out:
+
+1.Real-Time + Business-Focused: Predicts fraud instantly with inputs tailored to retail (Walmart-like) cases.
+
+2.Customizable Risk: Threshold slider lets users tune fraud sensitivity as per business needs.
+
+3.Polished UI: Dark mode by default + theme toggle for better UX.
+
+4.Interactive Analytics: Plotly charts for fraud by hour, location, category & animated gauge meter.
+
+5.Explainable AI: Shows feature importance—no black-box predictions.
+
+6.Upload-Ready: Accepts user CSVs and adapts automatically.
+
+7.Scalable Codebase: Modular backend, supports model upgrades easily.
+
+## This project doesn’t just predict fraud — it lets users adjust the risk threshold, instantly see results visually (with a gauge + Plotly charts), and understand why a prediction was made through feature importance insights — all inside a professional, theme-adaptive interface.
 
