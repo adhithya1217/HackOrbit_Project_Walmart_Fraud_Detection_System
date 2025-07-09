@@ -58,3 +58,8 @@ Initialising Streamlit Designing the app.py file ..
 ## 6th commit
 Completed the code and cheking for updates..
 and i have added  Real-Time Fraud Probability Gauge and also added visual Interactions ..
+
+## 7th commit
+Checked and Updated evrything whats necessary and new features implemnetd like interactions with the report ..
+ready for deployment ..
+
