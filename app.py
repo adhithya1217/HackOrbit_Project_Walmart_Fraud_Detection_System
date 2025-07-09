@@ -8,12 +8,15 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # --- Layout & Theme Setup ---
+# --- Layout & Theme Setup ---
 st.set_page_config(page_title="Walmart Fraud Detection", layout="wide")
 
-theme_mode = st.sidebar.radio("🌗 Choose Theme", ["Light", "Dark"])
-primary_color = "#1a73e8" if theme_mode == "Light" else "#ff9800"
-background_color = "#f7f9fc" if theme_mode == "Light" else "#1e1e1e"
-text_color = "#333333" if theme_mode == "Light" else "#f5f5f5"
+theme_mode = st.sidebar.radio("🌗 Choose Theme", ["Dark", "Light"], index=0)
+
+primary_color = "#ff9800" if theme_mode == "Dark" else "#1a73e8"
+background_color = "#1e1e1e" if theme_mode == "Dark" else "#f7f9fc"
+text_color = "#f5f5f5" if theme_mode == "Dark" else "#333333"
+
 
 st.markdown(f"""
     <style>
@@ -55,7 +58,7 @@ def load_model(file_path):
         st.error(f"Model load error: {e}")
         return None
 
-df = load_data("synthetic_augmented_transactions.csv")
+df = load_data("synthetic_realistic_fraud_200.csv")
 model = load_model("balanced_rf_model.joblib")
 
 if df is None or model is None:
@@ -92,8 +95,13 @@ with st.expander("📊 Explore Fraud Patterns"):
     st.plotly_chart(fig1, use_container_width=True)
 
     st.subheader("📦 Fraud by Product Category")
-    fraud_by_cat = df[df["IsFraud"] == 1]["ProductCategory"].value_counts()
-    fig2 = px.pie(names=fraud_by_cat.index, values=fraud_by_cat.values,
+    fraud_by_cat = (
+        df[df["IsFraud"] == 1]["ProductCategory"]
+        .value_counts()
+        .reset_index()
+    )
+    fraud_by_cat.columns = ["ProductCategory", "Count"]
+    fig2 = px.pie(fraud_by_cat, names="ProductCategory", values="Count",
                   title="Fraud by Product Category", hole=0.4)
     st.plotly_chart(fig2, use_container_width=True)
 
@@ -163,7 +171,7 @@ if st.button("🔍 Predict Fraud"):
 
     st.subheader("📌 Prediction Result")
     if is_fraud:
-        st.error(f"🚨 Fraud Detected! (Probability: {pred_prob[0]:.4f})")
+        st.error(f"🚨 Fraud Detected! Block this account urgently... (Probability: {pred_prob[0]:.4f})")
     else:
         st.success(f"✅ Legitimate Transaction (Probability: {pred_prob[0]:.4f})")
 
