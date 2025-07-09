@@ -75,3 +75,67 @@ Responsive layout with 3-column inputs, buttons, and hover animations.
 
 ## This project doesn’t just predict fraud — it lets users adjust the risk threshold, instantly see results visually (with a gauge + Plotly charts), and understand why a prediction was made through feature importance insights — all inside a professional, theme-adaptive interface.
 
+## commit 1 :
+Set up project structure
+
+Imported libraries (pandas, Streamlit, Plotly, etc.)
+
+Loaded and cleaned initial CSV dataset
+
+Basic EDA and saved a cleaned (.csv) file.
+
+## commit 2 :
+Built and trained the Random Forest model
+
+Performed class balancing
+
+Evaluated with accuracy, precision, recall
+
+Serialized model using joblib as balanced_rf_model.joblib
+
+## commit 3:
+Created Streamlit app layout
+
+Added input form for manual predictions
+
+Loaded model and predicted fraud from form inputs
+
+Displayed prediction with simple status messages
+
+## commit 4:
+Integrated sidebar toggle to switch between Light and Dark themes
+
+Dynamically styled buttons, backgrounds, and text
+
+## commit 5:
+Added real-time interactive charts using Plotly:
+
+Fraud by hour
+
+Fraud by product category
+
+Fraud by customer location
+
+Amount distribution (fraud vs. non-fraud)
+
+## commit 6:
+Integrated live gauge chart to visualize fraud probability
+
+Used plotly.graph_objects.Indicator
+
+## commit 7:
+Extracted feature importances from trained Random Forest model
+
+Visualized top 15 features contributing to predictions
+
+Enabled users to interpret the model's logic
+
+## commit 8:
+Enabled CSV file upload from sidebar
+
+Added threshold slider for real-time prediction control
+
+Cleaned UI layout, added captions, tooltips, icons
+
+Ensured dynamic visuals adapt to uploaded datasets
+
