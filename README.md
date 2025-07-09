@@ -53,3 +53,7 @@ After training and evaluating multiple configurations, the Random Forest Classif
 
 ## 5th commit 
 Initialising Streamlit Designing the app.py file ..
+
+## DAY 2
+## 6th commit
+Completed the code and cheking for updates as mentor mentioned yeaterday..
