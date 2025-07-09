@@ -56,4 +56,5 @@ Initialising Streamlit Designing the app.py file ..
 
 ## DAY 2
 ## 6th commit
-Completed the code and cheking for updates as mentor mentioned yeaterday..
+Completed the code and cheking for updates..
+and i have added  Real-Time Fraud Probability Gauge and also added visual Interactions ..
